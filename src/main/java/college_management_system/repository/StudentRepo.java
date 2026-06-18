@@ -1,0 +1,7 @@
+package college_management_system.repository;
+
+import college_management_system.model.StudentM;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface StudentRepo extends MongoRepository<StudentM, String> {
+}
