@@ -14,29 +14,29 @@ public class DepartmentController {
     @Autowired
     private DepartmentService service;
 
-    @PostMapping('/create')
+    @PostMapping("/create")
     public DepartmentM createDepartment(@RequestBody DepartmentM department) {
         return service.saveDepartment(department);
     }
 
-    @GetMapping('/all')
+    @GetMapping("/all")
     public List<DepartmentM> getAllDepartments() {
         return service.getAllDepartments();
     }
 
-    @GetMapping('/{id}')
+    @GetMapping("/{id}")
     public DepartmentM getDepartmentById(@PathVariable String id) {
         return service.getDepartmentById(id);
     }
 
-    @PutMapping('/{id}')
+    @PutMapping("/{id}")
     public DepartmentM updateDepartment(@PathVariable String id,
                                         @RequestBody DepartmentM department) {
         department.setDepartmentId(id);
         return service.updateDepartment(department);
     }
 
-    @DeleteMapping('/{id}')
+    @DeleteMapping("/{id}")
     public String deleteDepartment(@PathVariable String id) {
         service.deleteDepartment(id);
         return "Department deleted successfully";
